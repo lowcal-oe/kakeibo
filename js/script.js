@@ -3,3 +3,4 @@ document.querySelector('#plus-item-box').addEventListener('click', () => {
     newForm.type = 'text';
 
     document.querySelector('#item-price-box').appendChild(newForm);
+});
