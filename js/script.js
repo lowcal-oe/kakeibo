@@ -20,7 +20,7 @@ function calculateTotal() {
     });
 
     // 合計金額をHTMLに表示
-    document.querySelectorAll('.totalAmount');.innerText = "小計：" + totalAmount + "円";
+    document.querySelectorAll('.totalAmount').innerText = "小計：" + totalAmount + "円";
 }
 
 // ボタンがクリックされたときに合計金額を計算する
