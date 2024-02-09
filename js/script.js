@@ -3,16 +3,25 @@ document.querySelector('#plus-item-box').addEventListener('click', () => {
 
     for (let i = 0; i < 2; i++) {
         const newForm = document.createElement('input');
+        newForm.type = 'number';
+        newForm.name = 'price-name';
         itemPriceBox.appendChild(newForm);
     }
 });
 
 function calculateTotal() {
-    const amount1 = parseFloat(document.getElementById('price-name').value) || 0;
-    const amount2 = parseFloat(document.getElementById('price-name').value) || 0;
-    const amount3 = parseFloat(document.getElementById('price-name').value) || 0;
+    // 金額のテキストボックスをすべて取得
+    const priceInputs = document.querySelectorAll('input[name="price-name"]');
+    let totalAmount = 0;
 
-    const totalAmount = amount1 + amount2 + amount3;
+    // 金額のテキストボックスの値を合計
+    priceInputs.forEach(input => {
+        totalAmount += parseFloat(input.value) || 0;
+    });
 
-    document.getElementById('totalAmount').innerText = "小計：" + totalAmount;
+    // 合計金額をHTMLに表示
+    document.getElementById('totalAmount').innerText = "小計：" + totalAmount + "円";
 }
+
+// ボタンがクリックされたときに合計金額を計算する
+document.querySelector('#calculateButton').addEventListener('click', calculateTotal);
