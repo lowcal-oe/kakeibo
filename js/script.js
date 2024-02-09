@@ -1,6 +1,8 @@
 document.querySelector('#plus-item-box').addEventListener('click', () => {
-    const newForm = document.querySelector('#item-price-box input').cloneNode(true);
-    newForm.type = 'text';
+    const inputList = document.querySelectorAll('#item-price-box input');
 
-    document.querySelector('#item-price-box').appendChild(newForm);
+    inputList.forEach(input => {
+        const newForm = input.cloneNode(true);
+        document.querySelector('#item-price-box').appendChild(newForm);
+    });
 });
