@@ -1,5 +1,5 @@
-document.querySelector('#plus-item-box').addEventListener('click', () => {
-    const itemPriceBox = document.querySelector('#item-price-box');
+document.querySelector('.plus-item-box').addEventListener('click', () => {
+    const itemPriceBox = document.querySelector('.item-price-box');
 
     for (let i = 0; i < 2; i++) {
         const newForm = document.createElement('input');
@@ -24,4 +24,4 @@ function calculateTotal() {
 }
 
 // ボタンがクリックされたときに合計金額を計算する
-document.querySelector('#calculateButton').addEventListener('click', calculateTotal);
+document.querySelector('.calculateButton').addEventListener('click', calculateTotal);
