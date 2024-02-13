@@ -1,20 +1,6 @@
-// 追加ボタンをクリックするとテキストボックスを増やす
-// document.querySelector('.plus-item-box').addEventListener('click', () => {
-//     const itemPriceBox = document.querySelector('.item-price-box');
-
-//     for (let i = 0; i < 2; i++) {
-//         const newForm = document.createElement('input');
-//         newForm.type = 'number';
-//         newForm.name = 'price-name';
-//         itemPriceBox.appendChild(newForm);
-//     }
-// });
-
 document.querySelector('.plus-item-box').addEventListener('click', () => {
-    const itemPriceBox = document.querySelector('.item-price-box');
-    // itemPriceBox.textContent = '円:';
-
-    // for (let i = 0; i < 2; i++) {
+    // 2つのinput要素を追加ボタンを押すたびに増やす
+    const container = document.getElementById('container');
     const newForm = document.createElement('div');
     newForm.classList.add('item-price-box');
 
@@ -25,28 +11,24 @@ document.querySelector('.plus-item-box').addEventListener('click', () => {
     const priceNameInput = document.createElement('input');
     priceNameInput.type = 'number';
     priceNameInput.name = 'price-name';
+    priceNameInput.classList.add('price');
+    priceNameInput.addEventListener('input', updateTotal); // 入力されるたびに合計を更新
 
     newForm.appendChild(itemNameInput);
     newForm.appendChild(priceNameInput);
 
     container.appendChild(newForm);
-    // }
+
+    updateTotal();
 });
 
-
-function calculateTotal() {
-    // 金額のテキストボックスをすべて取得
-    const priceInputs = document.querySelectorAll('input[name="price-name"]');
-    let totalAmount = 0;
-
-    // 金額のテキストボックスの値を合計
+function updateTotal() {
+    const priceInputs = document.querySelectorAll('.price');
+    let subtotal = 0;
     priceInputs.forEach(input => {
-        totalAmount += parseFloat(input.value) || 0;
+        subtotal += parseFloat(input.value) || 0;
     });
 
-    // 合計金額をHTMLに表示
-    document.querySelectorAll('.totalAmount').innerText = "小計：" + totalAmount + "円";
+    const totalParagraph = document.querySelector('.subtotal');
+    totalParagraph.textContent = '合計: ' + subtotal;
 }
-
-// ボタンがクリックされたときに合計金額を計算する
-document.querySelector('.calculateButton').addEventListener('click', calculateTotal);

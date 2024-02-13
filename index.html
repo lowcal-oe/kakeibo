@@ -9,8 +9,8 @@
 
 <body>
     <button>本日</button>
+    <p id="total"></p>
     <section>
-        <p>合計</p>
         <p>2/1</p>
         <div>
             <label>項目</label>
@@ -18,27 +18,28 @@
         <div id="container">
             <div class="item-price-box">
                 <input type="text" name="item-name">
-                <input type="number" name="price-name">
+                <input type="number" name="price-name" class="price">
             </div>
         </div>
         <button class="plus-item-box">追加</button>
-        <button class="calculateButton">合計する</button>
-        <p class="totalAmount"></p>
+        <p class="subtotal"></p>
     </section>
+
     <section>
-        <p>合計</p>
         <p>2/2</p>
         <div>
             <label>項目</label>
         </div>
-        <div class="item-price-box">
-            <input type="text" name="item-name">
-            <!-- <input type="number" name="price-name">円 -->
+        <div id="container">
+            <div class="item-price-box">
+                <input type="text" name="item-name">
+                <input type="number" name="price-name" class="price">
+            </div>
         </div>
         <button class="plus-item-box">追加</button>
-        <button class="calculateButton">合計する</button>
-        <p class="totalAmount"></p>
+        <p class="subtotal"></p>
     </section>
+
     <script src="js/script.js"></script>
 </body>
 
