@@ -44,10 +44,18 @@ input[type="text"] {
     padding: 8px;
 }
 
+input[type="text"]:focus {
+    border: solid 1px #f84519;
+}
+
 input[type="number"] {
     flex: 1;
     margin-left: 8px;
     padding: 8px;
+}
+
+input[type="number"]:focus {
+    border: solid 1px #f84519;
 }
 
 .subtotal {
