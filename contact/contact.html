@@ -1,1 +1,25 @@
-あ
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ</title>
+</head>
+
+<body>
+    <h1>お問い合わせ</h1>
+    <form action="/contact/confirm.html" method="get">
+        <div>
+            <label for="username">メールアドレス*</label>
+            <input type="text" name="username" placeholder="名前" required>
+        </div>
+        <div>
+            <label for="username">内容*</label>
+            <textarea rows="5" cols="100" placeholder="内容" required></textarea>
+        </div>
+        <input type="submit" />
+    </form>
+</body>
+
+</html>
