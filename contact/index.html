@@ -10,17 +10,17 @@
 
 <body>
     <h1 class="contact-title">お問い合わせ</h1>
-    <form class="contact-form" action="/kakeibo/contact/confirm.html" method="get">
+    <form class="contact-form" action="/kakeibo/contact/confirm.php" method="post">
         <div class="contact-wrapper">
             <label class="contact-label" for="username">メールアドレス<span class="contact-required">*</span></label>
-            <input class="contact-input" type="text" name="username" placeholder="名前" required>
+            <input class="contact-input" type="text" name="username" placeholder="example@example.com" required>
         </div>
         <div class="contact-wrapper">
-            <label class="contact-label" for="username">内容<span class="contact-required">*</span></label>
+            <label class="contact-label" for="inquiry">内容<span class="contact-required">*</span></label>
             <textarea class="contact-input" rows="5" cols="100" placeholder="内容" required></textarea>
         </div>
         <button class="button contact-button">確認する</button>
     </form>
 </body>
 
-</html>
+</html>Ω
